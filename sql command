@@ -1,0 +1,23 @@
+CREATE TABLE SCHOOL1(
+SCHOOL_ID NUMBER (9,0) NOT NULL, SCHOOL_NAME VARCHAR2(255), 
+LOCATION VARCHAR2(255)); desc school2;
+truncate table school; alter table school1 
+drop (location); alter table school1
+add (location varchar2(255)); alter table school1
+rename to school2; alter table school2
+rename column location to locate;
+alter table school2 add primary key (SCHOOL_ID);
+create table teachers (
+teacher_id number(9,0) not null primary key,
+teacher_name varchar2(255),teacher_salary number,
+school_id number (9,0));
+alter table teachers add SCHOOL_ID NUMBER (9,0) NOT NULL;desc teachers;alter table teachers add school_id number (9,0);
+alter table teachers drop column school_id;
+alter table teachers add constraint fk_teachersschool 
+foreign key (SCHOOL_ID) references school2(SCHOOL_ID) ;
+alter table teachers drop table teachers ;
+alter table teachers 
+add age number(3,0) check (age>=20);
+
+
+
